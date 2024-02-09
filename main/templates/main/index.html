@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Renos Kerkides{% endblock title %}
+
+{% block extrahead %}
+<!-- Any additional head content can go here -->
+{% endblock extrahead %}
+
+{% block content %}
+<!-- Profile Section -->
+<section class="profile-section">
+    <img src="{% static 'images/Profile.jpg' %}" alt="Renos Kerkides" class="circle-image">
+    <div class="profile-text">
+        <h1>Hi, my name is <b>Renos!</b></h1>
+        <div id="typed-text"></div> <!-- Container for the typing effect -->
+    </div>
+</section>
+
+<section id="intro">
+    <div class="inner">
+        <header class="major">
+            <h2>My background</h2>
+        </header>
+        <p>With a background in Business Psychology from Loughborough University, 
+            I bring a unique perspective to tech, blending human insights with cutting-edge 
+            programming. I specialise in Java, but have also worked with C#, Python, Kotlin, JavaScript,
+             and C, and I'm always eager to tackle problems with a multidisciplinary approach. 
+             Whether it's developing web applications with Spring Boot and React or diving deep into 
+            algorithms and data structures, I love creating solutions that are as intuitive as they 
+            are effective. I'm always on the lookout for opportunities to grow and collaborate, aiming to make software 
+            that doesn't just work well but also makes life a bit easier and more enjoyable for everyone.</p>
+        
+        <div class="center-content">
+            <a href="/contact/" class="connect-button"><b>Let's connect and see what we can build together!</b></a>
+        </div>            
+
+    </div>
+</section>
+{% endblock content %}
+
+{% block extrajs %}
+<script>
+// Content for typing effect
+const content = "I'm an <b>aspiring developer</b> originally from Nicosia, Cyprus. Currently working towards a Software Development MSc at the University of Glasgow.";
+const typedTextContainer = document.getElementById('typed-text');
+let index = 0;
+
+// Function to create typing effect
+function type() {
+    // Add next character
+    typedTextContainer.innerHTML = content.slice(0, index);
+
+    // Increment index for next character
+    index++;
+
+    // Stop if the entire content has been displayed
+    if (index > content.length) {
+        typedTextContainer.innerHTML = content; // Ensure the final content is set
+        return;
+    }
+
+    // Calculate delay for next character
+    let delay = 10; // Typing speed in milliseconds
+    if (content[index - 1] === '<') { // If we're inside a tag
+        delay = 1; // Don't delay the typing inside tags
+        const tagEnd = content.indexOf('>', index);
+        if (tagEnd > index) {
+            index = tagEnd + 1; // Skip ahead to the end of the tag
+        }
+    }
+
+    // Schedule next character
+    setTimeout(type, delay);
+}
+
+// Start typing effect after DOM content has loaded
+document.addEventListener('DOMContentLoaded', type);
+</script>
+{% endblock extrajs %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ post.title }}</h1>
+    {% if post.image %}
+        <div class="post-image">
+            <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
+        </div>
+    {% endif %}
+    <p class="text-muted">Posted on: {{ post.date_created|date:"Y-m-d" }}</p>
+    <div>{{ post.content|safe }}</div> <!-- Use the safe filter here -->
+</div>
+{% endblock %}

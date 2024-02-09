@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Me{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+     <!-- Display Messages -->
+     {% if messages %}
+     <div class="alert alert-success" role="alert">
+         {% for message in messages %}
+             {{ message }}
+         {% endfor %}
+     </div>
+     {% endif %}
+
+    <h2>Contact Me</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="contact-form">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="reset" class="btn btn-outline-secondary">Clear</button>
+        </div>    
+    </form>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+    <!-- Any additional JS scripts can go here -->
+{% endblock extrajs %}
