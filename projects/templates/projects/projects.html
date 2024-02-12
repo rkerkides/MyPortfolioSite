@@ -20,7 +20,7 @@
         </ul>
     </div>
     <div class="row">
-        {% for project in projects %}
+        {% for project in page_obj %}
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 {% if project.image %}
@@ -53,6 +53,27 @@
         <p>No projects found.</p>
         {% endfor %}
     </div>
+
+    <!-- Pagination Controls -->
+    <nav aria-label="Project pagination">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">Previous</a>
+            </li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                <a class="page-link" href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">{{ num }}</a>
+            </li>
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
 </div>
 
 {% endblock %}
