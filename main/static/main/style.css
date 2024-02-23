@@ -1,157 +1,156 @@
-.circle-image {
-  width: 100%; /* Make the image responsive to the container's width */
-  max-width: 400px; /* Maximum width of the image */
-  height: auto; /* Height is set to 'auto' to maintain aspect ratio */
-  aspect-ratio: 1 / 1; /* Ensures the width and height are always equal, maintaining a circle */
-  border-radius: 50%; /* This makes the image round */
-  object-fit: cover; /* This makes sure the image covers the area without stretching */
-  display: block;
-  margin: 0 auto; /* Center the image within its container */
-  border: 10px solid #343a40; /* Adds a 10px dark border */
+/* General body styles */
+body {
+  background: linear-gradient(to bottom right, #000000, #8399b8); /* Gradient background from black to light blue */
+  color: white; /* Default text color */
 }
 
+/* Styling for circular images */
+.circle-image {
+  width: 100%; /* Responsive width */
+  max-width: 400px; /* Maximum width */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 1 / 1; /* Ensure circle shape */
+  border-radius: 50%; /* Round edges to form a circle */
+  object-fit: cover; /* Cover the frame without distortion */
+  display: block;
+  margin: 0 auto; /* Centering the image */
+  border: 10px solid #9fbbd7; /* Border around the image */
+}
+
+/* Layout for profile sections */
 .profile-section {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap onto the next line on smaller screens */
-  align-items: center; /* This vertically centers the items in the container */
-  padding: 30px 20px; /* Add padding as necessary */
-  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Wrap content on small screens */
+  align-items: center; /* Vertically align content */
+  justify-content: center; /* Horizontally align content */
+  padding: 30px 20px; /* Padding around the section */
 }
 
+/* Styling for profile description text */
 .profile-text {
-  flex: 1; /* Allow the text container to grow */
-  max-width: 600px; /* Adjust the max width as needed */
-  padding: 0 20px; /* Reduce side padding on smaller screens */
+  flex: 1; /* Flex grow to use available space */
+  max-width: 600px; /* Maximum width constraint */
+  padding: 0 20px; /* Horizontal padding */
 }
 
+/* Inner container with padding */
 .inner {
-  padding: 40px; /* Reduce the padding for smaller screens */
-  /* rest of your styles for .inner */
+  padding: 40px; /* Padding inside the inner container, adjust values as needed for your layout */
 }
 
+/* Form styling */
 form {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem; /* Reduced margin */
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 1rem; /* Space between form elements */
+  margin-bottom: 2rem; /* Space below the form */
 }
 
-/* Form fields */
+/* Input fields styling */
 .form-control {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  width: 100%; /* Ensure full-width inputs on smaller screens */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  padding: 0.75rem 1rem; /* Padding inside the input */
+  font-size: 1rem; /* Font size */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in width and height */
 }
 
-/* Make the label texts a bit larger and more readable */
+/* Label styling */
 .form-label {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  display: block; /* Ensure labels are block level for better structure */
-  color: #343a40;
+  font-size: 1.1rem; /* Slightly larger font size */
+  margin-bottom: 0.5rem; /* Space below the label */
+  display: block; /* Ensure block level */
+  color: #343a40; /* Label text color */
 }
 
+/* Responsive and centered image styling */
 .img-fluid {
-  max-width: 100%; /* ensures the image is never more than 100% of its container */
-  max-height: 500px; /* sets a maximum height for the image */
-  height: auto; /* maintains the aspect ratio of the image */
-  display: block; /* prevents inline spacing issues */
-  margin-left: auto; /* centers the image horizontally */
-  margin-right: auto; /* centers the image horizontally */
-  object-fit: contain; /* ensures that the image is scaled properly, maintaining its aspect ratio */
+  max-width: 100%; /* Max width to container */
+  max-height: 500px; /* Max height constraint */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Block display for centering */
+  margin: auto; /* Center horizontally */
+  object-fit: contain; /* Contain within bounds without distortion */
 }
 
-/* Responsive image inside a post */
+/* Container for images within posts */
 .post-image {
-  display: flex; /* use flexbox for container */
-  justify-content: center; /* center image horizontally */
-  align-items: center; /* center image vertically */
-  overflow: hidden; /* ensure the div doesn't exceed its bounds */
-  max-height: 500px; /* set a maximum height for the image container */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  overflow: hidden; /* Hide overflow */
+  max-height: 500px; /* Maximum height constraint */
 }
 
 .post-image img {
-  flex-shrink: 0; /* prevent the image from shrinking */
-  min-width: 100%; /* ensure the image covers the width */
-  min-height: 100%; /* ensure the image covers the height */
-  object-fit: cover; /* ensure the image covers the area without stretching */
+  flex-shrink: 0; /* Prevent shrinking */
+  min-width: 100%; /* Minimum width */
+  min-height: 100%; /* Minimum height */
+  object-fit: cover; /* Cover the container without distortion */
 }
 
-/* typing animation */
+/* Typing animation container */
 .typing-animation-container {
   position: relative;
   display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  font-family: monospace;
-  border-right: 3px solid;
-  animation: blink-caret 0.75s steps(1) infinite;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  font-family: monospace; /* Monospace font for typing effect */
+  border-right: 3px solid; /* Cursor simulation */
+  animation: blink-caret 0.75s steps(1) infinite; /* Blinking cursor animation */
 }
 
+/* Button with connection action */
 .connect-button {
-  display: inline-block; /* Use inline-block for the link */
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+  display: inline-block; /* Inline with block properties */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding around text */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* No underline */
+  transition: background-color 0.3s; /* Smooth color transition on hover */
 }
 
 .connect-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker on hover */
 }
 
+/* Center content utility */
 .center-content {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically, optional for this case */
-  flex-direction: column; /* Optional, if you want to stack multiple items */
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering, optional */
+  flex-direction: column; /* Stack children vertically */
 }
 
+/* Typing effect animation */
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
+/* Cursor blink animation */
 @keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
+  50% { border-color: transparent; }
 }
 
+/* Media queries for responsive adjustments */
 @media (max-width: 768px) {
-  .profile-section {
-    padding: 15px; /* Reduce padding on smaller screens */
-  }
-
-  .profile-text {
-    padding: 0 15px; /* Reduce side padding on smaller screens */
-  }
-
+  .profile-section,
+  .profile-text,
   .inner {
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 15px; /* Uniform padding for smaller screens */
   }
 
   form {
-    margin-bottom: 1rem; /* Reduced margin for smaller screens */
+    margin-bottom: 1rem; /* Smaller bottom margin */
   }
 
-  .post-image {
-    height: auto; /* adjust height on smaller screens */
-    max-height: 300px; /* smaller max height for the image container on smaller screens */
-  }
-
+  .post-image,
   .post-image img {
-    width: auto; /* make the image auto width on smaller screens */
-    max-width: 100%; /* ensure the image is never more than 100% of the container */
-    height: auto; /* adjust height automatically */
+    max-height: 300px; /* Adjusted max height for images */
+    height: auto; /* Auto-adjust height */
+    min-width: 100%; /* Full width for images */
   }
 }
