@@ -104,7 +104,7 @@ form {
 /* Button with connection action */
 .connect-button {
   display: inline-block; /* Inline with block properties */
-  background-color: #007bff; /* Button color */
+  background-color: #343a40; /* Button color */
   color: white; /* Text color */
   padding: 10px 20px; /* Padding around text */
   border-radius: 5px; /* Rounded corners */
@@ -113,7 +113,7 @@ form {
 }
 
 .connect-button:hover {
-  background-color: #0056b3; /* Darker on hover */
+  background-color: #000000; /* Darker on hover */
 }
 
 /* Center content utility */

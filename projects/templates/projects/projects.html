@@ -59,21 +59,28 @@
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">Previous</a>
+                <a class="page-link bg-dark text-white border-secondary" href="?page={{ page_obj.previous_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">Previous</a>
             </li>
             {% endif %}
             {% for num in page_obj.paginator.page_range %}
             <li class="page-item {% if page_obj.number == num %}active{% endif %}">
-                <a class="page-link" href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">{{ num }}</a>
+                {% if page_obj.number == num %}
+                    <a class="page-link bg-light text-dark border-secondary" href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">{{ num }}</a>
+                {% else %}
+                    <a class="page-link bg-dark text-white border-secondary" href="?page={{ num }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">{{ num }}</a>
+                {% endif %}
             </li>
             {% endfor %}
             {% if page_obj.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">Next</a>
+                <a class="page-link bg-dark text-white border-secondary" href="?page={{ page_obj.next_page_number }}{% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">Next</a>
             </li>
             {% endif %}
         </ul>
     </nav>
+
+
+    
 </div>
 
 {% endblock %}
